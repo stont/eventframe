@@ -1,52 +1,49 @@
-# To learn more about how to use Nix to configure your environment
-# see: https://developers.google.com/idx/guides/customize-idx-env
 { pkgs, ... }: {
-  # Which nixpkgs channel to use.
-  channel = "stable-24.05"; # or "unstable"
-  # Use https://search.nixos.org/packages to find packages
+  # Specifies the Nix channel. "stable-24.05" provides a stable set of packages.
+  channel = "stable-24.05";
+
+  # Lists the packages to be installed in the environment.
   packages = [
-    # pkgs.go
-    # pkgs.python311
-    # pkgs.python311Packages.pip
-    # pkgs.nodejs_20
-    # pkgs.nodePackages.nodemon
+    pkgs.nodejs_20      # Node.js version 20
+    pkgs.firebase-tools # Command-line tools for Firebase
   ];
-  # Sets environment variables in the workspace
-  env = {};
+
+  # Configuration for the IDX environment.
   idx = {
-    # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
+    # A list of VS Code extensions to install from the Open VSX Registry.
     extensions = [
-      # "vscodevim.vim"
+      "dbaeumer.vscode-eslint" # Integrates ESLint for code linting
+      "esbenp.prettier-vscode" # Code formatter
     ];
-    # Enable previews
+
+    # Workspace lifecycle hooks.
+    workspace = {
+      # Commands to run when the workspace is first created.
+      onCreate = {
+        # Installs project dependencies from package.json.
+        # This will be run after we initialize our npm project.
+        npm-install = "npm install";
+      };
+      # Commands to run every time the workspace is (re)started.
+      onStart = {
+        # A placeholder for starting the development server.
+        # We'll configure this properly once the project is set up.
+        start-dev-server = "echo 'Run npm run dev to start the server'";
+      };
+    };
+
+    # Configures a web preview for the application.
     previews = {
       enable = true;
       previews = {
-        # web = {
-        #   # Example: run "npm run dev" with PORT set to IDX's defined port for previews,
-        #   # and show it in IDX's web preview panel
-        #   command = ["npm" "run" "dev"];
-        #   manager = "web";
-        #   env = {
-        #     # Environment variables to set for your server
-        #     PORT = "$PORT";
-        #   };
-        # };
-      };
-    };
-    # Workspace lifecycle hooks
-    workspace = {
-      # Runs when a workspace is first created
-      onCreate = {
-        # Example: install JS dependencies from NPM
-        # npm-install = "npm install";
-        # Open editors for the following files by default, if they exist:
-        default.openFiles = [ ".idx/dev.nix" "README.md" ];
-      };
-      # Runs when the workspace is (re)started
-      onStart = {
-        # Example: start a background task to watch and re-build backend code
-        # watch-backend = "npm run watch-backend";
+        # Defines a preview named 'web'.
+        web = {
+          # The command to start the development server.
+          # The $PORT variable is dynamically assigned by IDX.
+          command = ["npm" "run" "dev" "--" "--port" "$PORT"];
+          # Specifies that this is a web server preview.
+          manager = "web";
+        };
       };
     };
   };

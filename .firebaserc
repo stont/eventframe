@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "gef": "gef-mixer"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}

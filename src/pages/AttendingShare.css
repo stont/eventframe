@@ -1,0 +1,336 @@
+.share-page-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f7fc;
+    min-height: 100vh;
+}
+
+.share-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.photo-container {
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+.shared-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.share-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.share-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #2c3e50;
+    line-height: 1.3;
+}
+
+.share-content p {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.share-button {
+    padding: 14px 16px;
+    border: none;
+    border-radius: 0px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    flex: 1;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 50px;
+}
+
+.share-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.share-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.share-button svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+}
+
+/* Download Button Styling */
+.share-button.download { 
+    background-color: #28a745;
+}
+
+.share-button.download:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+/* Native Share Button */
+.share-button.native { 
+    background-color: #6c757d;
+}
+
+.share-button.native:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+/* Social Media Buttons */
+.share-button.twitter { 
+    background-color: #1DA1F2;
+}
+
+.share-button.twitter:hover:not(:disabled) {
+    background-color: #1a91da;
+}
+
+.share-button.facebook { 
+    background-color: #1877F2;
+}
+
+.share-button.facebook:hover:not(:disabled) {
+    background-color: #166fe5;
+}
+
+.share-button.linkedin { 
+    background-color: #0A66C2;
+}
+
+.share-button.linkedin:hover:not(:disabled) {
+    background-color: #095bb0;
+}
+
+.cta-section {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #eee;
+}
+
+.cta-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #d815ff;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 0px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+/* Loading and Error states */
+.loading-card, .error-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    padding: 40px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.loading-card p {
+    font-size: 18px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.error-message {
+    font-size: 18px;
+    color: #dc3545;
+    margin-bottom: 20px;
+}
+
+/* Mobile specific adjustments (keeping mobile-first approach for all screens) */
+@media (max-width: 767px) {
+    .share-page-container {
+        padding: 15px;
+    }
+    
+    .share-card {
+        max-width: 100%;
+        border-radius: 12px;
+    }
+    
+    .share-content {
+        padding: 20px;
+    }
+    
+    .share-content h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+    
+    .share-content p {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .share-buttons {
+        margin: 20px 0;
+        gap: 10px;
+    }
+    
+    .share-button {
+        padding: 12px 16px;
+        font-size: 14px;
+        min-height: 48px;
+    }
+    
+    .share-button svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .cta-section {
+        margin-top: 25px;
+        padding-top: 20px;
+    }
+    
+    .cta-section h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+}
+
+/* Very small mobile screens */
+@media (max-width: 480px) {
+    .share-content h2 {
+        font-size: 20px;
+    }
+    
+    .share-button {
+        font-size: 13px;
+        gap: 6px;
+    }
+    
+    .share-button svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Enhanced visual appeal - subtle animations and improvements */
+.share-card {
+    transition: transform 0.3s ease;
+}
+
+.share-card:hover {
+    transform: translateY(-2px);
+}
+
+.shared-photo {
+    transition: transform 0.3s ease;
+}
+
+.photo-container:hover .shared-photo {
+    transform: scale(1.02);
+}
+
+/* Loading animation for buttons */
+.share-button:disabled {
+    position: relative;
+}
+
+.share-button:disabled::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Accessibility improvements */
+.share-button:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.cta-button:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .share-button {
+        border: 2px solid currentColor;
+    }
+    
+    .share-card {
+        border: 1px solid #333;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .share-button,
+    .cta-button,
+    .share-card,
+    .shared-photo {
+        transition: none;
+    }
+    
+    .share-button:disabled::after {
+        animation: none;
+    }
+}

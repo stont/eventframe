@@ -1,0 +1,90 @@
+.modal-overlay-attending {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content-attending {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+}
+
+.close-button-attending {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.upload-initial {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Corrected Styles for the Upload Buttons */
+.upload-options-attending {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    align-items: center; /* This centers the buttons */
+}
+
+.upload-button-attending {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s;
+    width: 250px; /* Gives the buttons a consistent, centered width */
+    max-width: 100%;
+}
+
+
+.upload-button-attending:hover {
+    background-color: #e9ecef;
+}
+
+.crop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.ReactCrop { max-width: 100%; }
+.ReactCrop__image { max-height: 50vh; }
+
+.generate-button, .change-image-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.generate-button { background-color: #007bff; color: white; }
+.generate-button:disabled { background-color: #aaa; }
+.change-image-button { background-color: #f0f2f5; color: #333; }
+.error-message { color: #d93025; font-weight: bold; margin-top: 15px; }

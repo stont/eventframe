@@ -1,0 +1,27 @@
+.upload-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  /* Adjust size for text */
+  width: auto; 
+  padding: 0 20px;
+  height: 60px;
+  
+  background-color: #007bff;
+  color: white;
+  border-radius: 30px; /* Rounded corners */
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px; /* Adjusted font size */
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+  z-index: 100;
+}
+
+.upload-fab:hover {
+  background-color: #0056b3;
+}

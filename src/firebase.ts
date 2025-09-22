@@ -7,13 +7,13 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAd83GPMU0P1bczZHvpxa95ldYsRpC97HY",
-  authDomain: "gef-mixer.firebaseapp.com",
+  apiKey: "[YOUR-API-KEY]",
+  authDomain: "[YOUR-PROJECT-DOMAIN]",
   projectId: "gef-mixer",
-  storageBucket: "gef-mixer.firebasestorage.app",
-  messagingSenderId: "1067367218518",
-  appId: "1:1067367218518:web:4f8250d6809b0ff9bdeaf7",
-  measurementId: "G-HWLCYQL7B4"
+  storageBucket: "[YOUR-BUCKET-ID]",
+  messagingSenderId: "[YOUR-MESSAGE-ID]",
+  appId: "[YOUR-APP-ID]",
+  measurementId: "[YOUR-MEASUREMENT-ID]"
 };
 
 // Initialize Firebase
